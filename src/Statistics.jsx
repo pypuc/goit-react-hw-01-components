@@ -1,16 +1,17 @@
 import React from "react";
+import style from "./Statistics.module.css";
 
 function Statistics({ title, stats }) {
   return (
-    <section className="statistics">
-      <h2 className="title">{title}</h2>
+    <section className={style.statistics}>
+      <h2 className={style.title}>{title}</h2>
 
-      <ul className="stat-list">
+      <ul className={style.list}>
         {Array.isArray(stats) &&
           stats.map((item) => (
-            <li className="item" key={item.id}>
-              <span className="label">{item.label}</span>
-              <span className="percentage">{item.percentage}%</span>
+            <li className={style.item} key={item.id}>
+              <span className={style.label}>{item.label}</span>
+              <span className={style.percentage}>{item.percentage}%</span>
             </li>
           ))}
       </ul>
